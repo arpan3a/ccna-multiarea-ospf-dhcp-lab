@@ -1,0 +1,40 @@
+! R1 DHCP server — relevant corrected configuration
+hostname R1_DHCP_Srv
+
+ip dhcp excluded-address 192.168.1.1
+ip dhcp excluded-address 192.168.1.9
+ip dhcp excluded-address 192.168.1.17
+ip dhcp excluded-address 192.168.1.25
+
+ip dhcp pool Test1
+ network 192.168.1.8 255.255.255.248
+ default-router 192.168.1.9
+
+ip dhcp pool Test2
+ network 192.168.1.16 255.255.255.248
+ default-router 192.168.1.17
+
+ip dhcp pool Test3
+ network 192.168.1.0 255.255.255.248
+ default-router 192.168.1.1
+
+! Correct pool for the R4 LAN. The overlapping Test4 /30 pool was removed.
+ip dhcp pool Test5
+ network 192.168.1.24 255.255.255.248
+ default-router 192.168.1.25
+
+interface Loopback10
+ ip address 201.201.201.201 255.255.255.255
+
+interface FastEthernet0/0
+ ip address 192.168.1.9 255.255.255.248
+ duplex auto
+ speed auto
+
+interface Serial0/0
+ ip address 10.0.0.1 255.255.255.252
+
+router ospf 1
+ log-adjacency-changes
+ network 192.168.1.8 0.0.0.7 area 0
+ network 10.0.0.0 0.0.0.3 area 0

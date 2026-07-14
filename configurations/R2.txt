@@ -1,0 +1,30 @@
+R2#sh run
+!
+interface Loopback10
+ ip address 202.202.202.202 255.255.255.255
+!
+interface FastEthernet0/0
+ ip address 192.168.1.17 255.255.255.248
+ ip helper-address 10.0.0.1
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/0
+ ip address 10.0.0.2 255.255.255.252
+ clock rate 2000000
+!
+interface Serial0/1
+ ip address 10.0.0.5 255.255.255.252
+!
+router ospf 1
+ log-adjacency-changes
+ network 192.168.1.16 0.0.0.7 area 0
+ network 10.0.0.4 0.0.0.3 area 0
+ network 10.0.0.0 0.0.0.3 area 0
+!

@@ -1,0 +1,20 @@
+! R4 — relevant configuration
+hostname R4
+
+interface FastEthernet0/0
+ ip address 10.0.0.10 255.255.255.252
+ duplex auto
+ speed auto
+
+interface FastEthernet0/1
+ ip address 192.168.1.25 255.255.255.248
+ ip helper-address 10.0.0.1
+ duplex auto
+ speed auto
+
+router ospf 1
+ log-adjacency-changes
+ network 192.168.1.24 0.0.0.7 area 1
+ network 10.0.0.8 0.0.0.3 area 1
+
+ip classless
