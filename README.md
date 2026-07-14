@@ -125,7 +125,7 @@ multiarea-ospf-dhcp-lab.pkt
 
 ## Learning outcome
 
-This exercise reinforced that DHCP troubleshooting in a routed network requires validating the entire transaction path—not only the helper address. Interface state, relay configuration, routing in both directions, DHCP scopes, exclusions, and client renewal must all be checked systematically.
+This exercise reinforced that DHCP troubleshooting in a routed network requires validating the entire transaction path, not only the helper address. Interface state, relay configuration, routing in both directions, DHCP scopes, exclusions, and client renewal must all be checked systematically.
 
 ## Disclaimer
 
