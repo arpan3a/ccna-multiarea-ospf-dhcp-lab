@@ -119,26 +119,6 @@ show ip dhcp binding
 
 Expected validation criteria are documented in [`verification/verification-checklist.md`](verification/verification-checklist.md).
 
-## Repository contents
-
-```text
-.
-├── README.md
-├── configurations/
-│   ├── R1-DHCP-Server.txt
-│   └── R4.txt
-├── packet-tracer/
-│   └── README.md
-├── social-media/
-│   └── linkedin-post.md
-├── topology/
-│   └── network-topology.png
-├── troubleshooting/
-│   └── incident-report.md
-└── verification/
-    └── verification-checklist.md
-```
-
 ## Lab file
 
 multiarea-ospf-dhcp-lab.pkt
